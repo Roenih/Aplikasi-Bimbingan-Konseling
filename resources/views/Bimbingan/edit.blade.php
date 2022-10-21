@@ -100,8 +100,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="input-group">
-                            <label>Jenis Masalah</label>
-                                <select class="jenis masalah" class="form-control" name="jenis_masalah">
+                            <label>Id Masalah</label>
+                                <select class="id_masalah" class="form-control" name="id_masalah">
                                 <option value="">Pilih Masalah</option>
                                 @foreach ($jenismasalah as $item)
                                 <option value="{{ $item->id_masalah}}">{{ $item->nm_masalah}}</option>

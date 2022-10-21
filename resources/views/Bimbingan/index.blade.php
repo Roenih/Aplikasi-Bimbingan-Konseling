@@ -19,6 +19,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('Template.sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <div>
+      @if(session('Data dihapus'))
+      <div class="alert alert-danger" role="alert">
+          {{session('Data dihapus')}}
+      </div>
+      @endif
+      @if(session('Data ditambah'))
+      <div class="alert alert-info" role="alert">
+          {{session('Data ditambah')}}
+      </div>
+      @endif
+      @if(session('Data diedit'))
+      <div class="alert alert-warning" role="alert">
+          {{session('Data diedit')}}
+      </div>
+      @endif
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -36,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+  </div>
     <!-- Main content -->
     <!doctype html>
 <html>
@@ -53,10 +69,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{-- Data Bimbingan --}}
                 </div>
                 <div class="card-body">
-                    <a href="/tambah-bimbingan" class="btn btn-primary float-right"><i class=" fa fa-plus"></i>Tambah Bimbingan</a>
+                    <a href="/tambah-bimbingan" class="btn btn-success float-right"><i class=" fa fa-plus"></i>Tambah Bimbingan</a>
                     <br/>
                     <br/>
-                    <table class="table table-bordered table-hover table-striped">
+                    <table class="table table-bordered table-hover table-striped" id="table-data">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -65,10 +81,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <th>Nama Kelas</th>
                                 <th>Tanggal Konsultasi</th>
                                 {{-- <th>Id Kelas</th> --}}
-                                <th>Jenis Masalah</th>
+                                <th> Nama Masalah</th>
                                 <th>Diskripsi Bimbingan</th>
                                 <th>Penyelesaian</th>
-                                <th colspan="3" style="text-align: center;">Aksi</th>
+                                <th style="text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,7 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     <td>
                                         <a href="/edit-bimbingan/{{ $p->id_bimbingan }}" class="btn btn-warning"><i class="fa fa-edit"></i></a> 
-                                        <a href="/delete-bimbingan/{{ $p->id_bimbingan }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a href="/delete-bimbingan/{{ $p->id_bimbingan }}" class="btn btn-danger" onclick="return confirm('Yakin anda ingin menghapus data ini?')"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

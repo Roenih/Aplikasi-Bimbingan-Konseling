@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{-- Data Guru --}}
                 </div>
                 <div class="card-body">
-                    <a href="/tambah-guru" class="btn btn-primary float-right"><i class=" fa fa-plus"></i>Tambah Guru</a>
+                    <a href="/tambah-guru" class="btn btn-success float-right"><i class=" fa fa-plus"></i>Tambah Guru</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">

@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="mb-3 row">
                                 <label for="kode_kelas" class="col-sm-2 col-form-label">kode_kelas</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="kode_kelas" value="{{ $siswa->kode_kelas }}" disabled>
+                                    <input type="text" class="form-control" id="kode_kelas" value="{{ !empty($siswa->kode_kelas) ? $siswa->kelas->kode_kelas : '-' }}" disabled>
                                     {{-- <p>{{ $siswa->kelas->nm_kelas }}</p> --}}
                                 </div>
                             </div>

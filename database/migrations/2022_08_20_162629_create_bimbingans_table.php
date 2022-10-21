@@ -19,7 +19,7 @@ class CreateBimbingansTable extends Migration
             $table->string('nm_kelas');
             $table->string('tgl_konsultasi',15);
             // $table->string('kode_kelas');
-            $table->string('jenis_masalah');
+            $table->string('id_masalah');
             $table->string('diskripsi_bimbingan');
             $table->string('penyelesaian');
             $table->timestamps();

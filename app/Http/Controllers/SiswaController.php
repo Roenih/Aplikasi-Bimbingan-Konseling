@@ -36,13 +36,14 @@ class SiswaController extends Controller
  
         Siswa::create($request->all());
  
-    	return redirect('/siswa');
+    	return redirect('/siswa')->with('Data ditambah','Data berhasil ditambah!');
     }
     
     public function detail($id)
     {
+        $kelas = \App\Kelas::all();
         $siswa = Siswa::where('nis',$id)->first();
-        return view('siswa.detail',compact('siswa'));
+        return view('siswa.detail',compact('siswa','kelas'));
     }
 
     public function edit($id)
@@ -82,13 +83,13 @@ class SiswaController extends Controller
         'email' => $request->email,
         ]);
 
-        return redirect('/siswa');
+        return redirect('/siswa')->with('Data diedit','Data berhasil diedit!');
     }
 
     public function delete($id)
     {
         Siswa::where('nis',$id)->delete();
-        return redirect('/siswa');
+        return redirect('/siswa')->with('Data dihapus','Data berhasil dihapus!');
     }
 
     public function TampilanCetak()

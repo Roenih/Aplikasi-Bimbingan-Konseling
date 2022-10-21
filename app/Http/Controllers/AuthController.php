@@ -7,10 +7,10 @@ use Auth;
 
 class AuthController extends Controller
 {
-    public function Login()
-    {   
-        return view('Auth.login');
-    }
+    // public function Login()
+    // {   
+    //     return view('Auth.login');
+    // }
 
     public function PostLogin(Request $request)
     {

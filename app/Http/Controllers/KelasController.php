@@ -33,7 +33,7 @@ class KelasController extends Controller
 
     	]);
  
-    	return redirect('/kelas');
+    	return redirect('/kelas')->with('Data ditambah','Data berhasil ditambah!');
     }
 
     public function detail($id)
@@ -63,12 +63,12 @@ class KelasController extends Controller
 
         ]);
 
-        return redirect('/kelas');
+        return redirect('/kelas')->with('Data diedit','Data berhasil diedit!');
     }
 
     public function delete($id)
     {
         Kelas::where('kode_kelas',$id)->delete();
-        return redirect('/kelas');
+        return redirect('/kelas')->with('Data dihapus','Data berhasil dihapus!');
     }
 }

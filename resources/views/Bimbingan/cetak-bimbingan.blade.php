@@ -81,25 +81,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </a>
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <form action="/cetak-bimbingan-pertanggal" class="mt-5" method="get">
+                                    <form action="/cetak-siswa/per-siswa" class="mt-5" method="get">
                                         <div class="form-group" style="display: flex; gap: 10px; align-items: flex-end;">
-                                            <div style="width: 100%">
-                                                <input type="date" name="start" class="form-control" id="startInput"
-                                                    placeholder="Enter date" value="old('start')">
-                                            </div>
-                                            <div>
-                                                <h5>TO</h5>
-                                            </div>
-                                            <div style="width: 100%">
-                                                <input type="date" name="end" class="form-control" id="endInput"
-                                                    placeholder="Enter date" value="old('end')">
+                                            <div class="form-group" style="width: 300px">
+                                                <select class="form-control" name="nis" id="exampleFormControlSelect1">
+                                                    <option>Pilih Siswa</option>
+                                                    @foreach ($siswa as $s)
+                                                        <option value="{{$s->nis}}">{{$s->nm_siswa}} - {{ $s->nis }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         {{-- <a href="" style="margin-right: 10px;"> --}}
-                                            <button type="submit" class="btn btn-primary">Print <i class="fas fa-print"></i></button>
+                                            <button type="submit" class="btn btn-primary">Print Persiswa<i class="fas fa-print"></i></button>
                                         {{-- </a> --}}
                                         </form>
-                                        <a href="/cetak-bimbingan/pdf">
+                                        <a href="/cetak-siswa">
                                             <button class="btn btn-primary mt-3">Print Keseluruhan <i class="fas fa-print"></i></button>
                                         </a>
                                 </div>

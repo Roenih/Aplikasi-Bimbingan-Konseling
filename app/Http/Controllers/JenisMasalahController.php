@@ -42,7 +42,7 @@ class JenisMasalahController extends Controller
 
     	]);
  
-    	return redirect('/jenismasalah');
+    	return redirect('/jenismasalah')->with('Data ditambah','Data berhasil ditambah!');
     }
 
     /**
@@ -88,7 +88,7 @@ class JenisMasalahController extends Controller
     
             ]);
     
-            return redirect('/jenismasalah');
+            return redirect('/jenismasalah')->with('Data diedit','Data berhasil diedit!');
     }
 
     /**
@@ -100,6 +100,6 @@ class JenisMasalahController extends Controller
     public function delete($id)
     {
         JenisMasalah::where('id_masalah',$id)->delete();
-        return redirect('/jenismasalah');
+        return redirect('/jenismasalah')->with('Data dihapus','Data berhasil sihapus!');
     }
 }

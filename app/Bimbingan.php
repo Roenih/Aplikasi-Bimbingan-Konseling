@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Bimbingan extends Model
 {
     protected $table = 'bimbingans';
-    protected $fillable = ['nis','nm_siswa','nm_kelas','tgl_konsultasi','jenis_masalah','diskripsi_bimbingan','penyelesaian'];
+    protected $fillable = ['nis','nm_siswa','nm_kelas','tgl_konsultasi','id_masalah','diskripsi_bimbingan','penyelesaian'];
     protected $primarykey = 'id_bimbingan';
 
     public function jenismasalah()
     {
-        return $this->belongsTo('\App\JenisMasalah','jenis_masalah','id_masalah');
+        return $this->belongsTo('\App\JenisMasalah','id_masalah','id_masalah');
     }
 
     public function siswa()

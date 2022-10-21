@@ -27,10 +27,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             {{-- <h1 class="m-0">Starter Page</h1> --}}
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            {{-- <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
+            </ol> --}}
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -88,11 +88,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         
                         <div class="input-group">
-                            <label>Kode Kelas </label>
-                                <select class="kode_kelas" class="form-control" id="kode_kelas">
+                            <label for="kode_kelas">Kode Kelas </label>
+                                <select class="form-control" id="kode_kelas" name="kode_kelas">
                                 <option value="">Pilih Kode</option>
                                 @foreach ($kelas as $item)
-                                <option value="{{ $item->kode_kelas}}">{{ $item->kode_kelas}}</option>
+                                <option value="{{ $item->kode_kelas}}">{{ $item->kode_kelas }}</option>
                                 @endforeach
                                 </select>
                             {{-- <div class="input-group-append">

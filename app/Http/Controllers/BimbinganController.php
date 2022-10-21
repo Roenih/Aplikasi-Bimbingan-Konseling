@@ -41,17 +41,17 @@ class BimbinganController extends Controller
 
         Bimbingan::create([
     		'nis' => $request->nis,
-    		'nm_siswa' => $request->nm_siswa,
+    		// 'nm_siswa' => $request->nm_siswa,
             'nm_kelas' => $request->nm_kelas,
             'tgl_konsultasi' => $request->tgl_konsultasi,
             // 'kode_kelas' => $request->kode_kelas,
-            'jenis_masalah' => $request->jenis_masalah,
+            'id_masalah' => $request->id_masalah,
     		'diskripsi_bimbingan' => $request->diskripsi_bimbingan,
             'penyelesaian' => $request->penyelesaian,
 
     	]);
  
-    	return redirect('/bimbingan');
+    	return redirect('/bimbingan')->with('Data ditambah','Data berhasil ditambah!');
     }
 
     public function detail($id)
@@ -88,31 +88,50 @@ class BimbinganController extends Controller
             'nm_kelas' => $request->nm_kelas,
             'tgl_konsultasi' => $request->tgl_konsultasi,
             // 'kode_kelas' => $request->kode_kelas,
-            'jenis_masalah' => $request->jenis_masalah,
+            'id_masalah' => $request->id_masalah,
     		'diskripsi_bimbingan' => $request->diskripsi_bimbingan,
             'penyelesaian' => $request->penyelesaian,
         ]);
 
-        return redirect('/bimbingan');
+        return redirect('/bimbingan')->with('Data diedit','Data berhasil diedit!');
     }
 
     public function delete($id)
     {
         Bimbingan::where('id_bimbingan',$id)->delete();
-        return redirect('/bimbingan');
+        return redirect('/bimbingan')->with('Data dihapus','Data berhasil dihapus!');
     }
 
     public function CetakBimbingan()
     {
         $siswa = Siswa::all();
+        // dd($siswa);
         return view('Bimbingan.cetak-bimbingan',compact('siswa'));
+    }
+
+    public function CetakSiswaAll() {
+        $siswa = Siswa::all();
+
+        $pdf = PDF::loadview('Bimbingan.cetak-siswa',compact('siswa'));
+    	return $pdf->stream();
+    }
+
+    public function CetakPerSiswa(Request $request)
+    {
+        $test = $request->nis;
+        // dd((int) $test);
+        $siswa = Siswa::where('nis',$test)->get();
+
+        // dd($siswa);
+        $pdf = PDF::loadview('Bimbingan.cetak-siswa',compact('siswa'));
+    	return $pdf->stream();
     }
 
     public function CetakPdfBimbingan()
     {
-
     	$bimbingan = Bimbingan::all();
- 
+
+        // dd($bimbingan);
     	$pdf = PDF::loadview('Bimbingan.bimbingan_pdf',compact('bimbingan'));
     	return $pdf->stream();
     }

@@ -199,7 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <a href="/kelas" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                               </div>
-        <!-- ./col -->
+                             <!-- ./col -->
     </div>
     <!-- /.row -->
             <!-- /.content -->

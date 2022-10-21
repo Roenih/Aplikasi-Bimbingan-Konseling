@@ -1,8 +1,8 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-olive elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="{{asset('gambar/logosmki.jpeg')}}" alt="" class="brand-image img-circle elevation-3">
-    <span class="brand-text font-weight-light">SMKI Utama</span>
+  <a href="#" class="brand-link">
+    <img src="{{asset('gambar/logosmki.jpeg')}}" alt="" class="brand-image img-circle">
+    <span class="brand-text font-weight-dark">SMKI UTAMA</span>
   </a>
 
   <!-- Sidebar -->
@@ -13,12 +13,12 @@
         <img src="dist" class="img-circle elevation-2" alt="">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Bimbingan Konseling</a>
+        <a href="#" class="d-block">BIMBINGAN KONSELING</a>
       </div>
     </div>
 
     <!-- SidebarSearch Form -->
-    <div class="form-inline">
+    {{-- <div class="form-inline">
       <div class="input-group" data-widget="sidebar-search">
         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -27,7 +27,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -35,8 +35,8 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
              <li class="nav-item">
-              <a href="{{route('beranda')}}" class="nav-link {{ Request::is('beranda') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-tachometer-alt" ></i>
+              <a href="/beranda" class="nav-link {{ Request::is('beranda') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-home" ></i>
                 <p>Home</p>
               </a>
             </li>
@@ -45,24 +45,30 @@
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              forms
+              Tables
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           
           <ul class="nav nav-treeview">
+            {{-- <li class="nav-item">
+              <a href="/admins" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Admin</p>
+              </a>
+            </li> --}}
             <li class="nav-item">
               <a href="{{route('siswa')}}" class="nav-link {{ Request::is('siswa') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data siswa</p>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{route('guru')}}" class="nav-link {{ Request::is('guru') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Guru</p>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a href="{{route('bimbingan')}}" class="nav-link {{ Request::is('bimbingan') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
@@ -87,13 +93,13 @@
           <a href="{{route('cetak-bimbingan')}}" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Cetak Bimbingan
+              Cetak Laporan
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{route('Login')}}" class="nav-link">
+          <a href="{{route('logout')}}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Logout

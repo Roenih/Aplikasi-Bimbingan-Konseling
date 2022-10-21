@@ -12,7 +12,7 @@ class JenisMasalah extends Model
 
     public function bimbingan()
     {
-        return $this->hasmany('\App\Bimbingan','id_bimbingan');
+        return $this->hasMany('\App\Bimbingan','id_bimbingan');
     }
 }
 

@@ -19,6 +19,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('Template.sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    @if(session('Data dihapus'))
+    <div class="alert alert-danger" role="alert">
+        {{session('Data dihapus')}}
+    </div>
+    @endif
+    @if(session('Data ditambah'))
+    <div class="alert alert-info" role="alert">
+        {{session('Data ditambah')}}
+    </div>
+    @endif
+    @if(session('Data diedit'))
+    <div class="alert alert-warning" role="alert">
+        {{session('Data diedit')}}
+    </div>
+    @endif
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -53,17 +68,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Data Siswa
                 </div> --}}
                 <div class="card-body">
-                    <a href="/tambah-siswa" class="btn btn-primary float-right"><i class=" fa fa-plus"></i>Tambah siswa</a>
+                    <a href="/tambah-siswa" class="btn btn-success float-right"><i class=" fa fa-plus"></i>Tambah siswa</a>
                     <br/>
                     <br/>
-                    <table class="table table-bordered table-hover table-striped">
+                    <table class="table table-bordered table-hover table-striped" id="table-data">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nis</th>
                                 <th>Nama Siswa</th>
-                                {{-- <th>Kode Kelas</th>
-                                <th>Tanggal Lahir</th> --}}
+                                {{-- <th>Kode Kelas</th> --}}
+                                {{-- <th>Tanggal Lahir</th> --}}
                                 <th>Jenis Kelamin</th>
                                 {{-- <th>Nama Ayah</th>
                                 <th>Pekerjaan Ayah</th> --}}
@@ -79,8 +94,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ $p->nis }}</td>
                                 <td>{{ $p->nm_siswa }}</td>
-                                {{-- <td>{{ $p->kode_kelas}}</td>
-                                <td>{{ $p->tgl_lahir}}</td> --}}
+                                {{-- <td>{{ $p->kelas->nm_kelas ?? ''}}</td> --}}
+                                {{-- <td>{{ $p->tgl_lahir}}</td> --}}
                                 <td>{{ $p->jenkel }}</td>
                                 {{-- <td>{{ $p->nm_ayah}}</td>
                                 <td>{{ $p->pekerjaan_ayah}}</td> --}}
@@ -90,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <td>
                                     <a href="/edit-siswa/{{ $p->nis }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                     <a href="/detail-siswa/{{ $p->nis }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
-                                    <a href="/delete-siswa/{{ $p->nis }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    <a href="/delete-siswa/{{ $p->nis }}" class="btn btn-danger" onclick="return confirm('Yakin anda ingin menghapus data ini?')"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -132,27 +147,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
  {{-- @extends('halamandepan.Beranda')  --}}
 
 @section('content')
-<div class="card mt-5">
+{{-- <div class="card mt-5">
     <div class="card-header text-center">
         Data Siswa
     </div>
     <div class="card-body">
-        <a href="/tambah-siswa" class="btn btn-primary">Input siswa</a>
+        <a href="/tambah-siswa" class="btn btn-success">Tambah siswa</a>
         <br/>
         <br/>
         <table class="table table-bordered table-hover table-striped">
-            <thead>
+            <thead class="table-primary">
                 <tr>
                     <th>Nis</th>
                     <th>Nama Siswa</th>
-                    {{-- <th>Kode Kelas</th> --}}
-                    {{-- <th>Tanggal Lahir</th> --}}
+                    <th>Kode Kelas</th>
+                    <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
-                    {{-- <th>Nama Ayah</th> --}}
-                    {{-- <th>Pekerjaan Ayah</th> --}}
-                    {{-- <th>No Telepon</th> --}}
+                    <th>Nama Ayah</th>
+                    <th>Pekerjaan Ayah</th>
+                    <th>No Telepon</th>
                     <th>Email</th>
-                    {{-- <th>Alamat</th> --}}
+                    <th>Alamat</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -161,14 +176,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <tr>
                     <td>{{ $p->nis }}</td>
                     <td>{{ $p->nm_siswa }}</td>
-                    {{-- <td>{{ $p->kode_kelas}}</td> --}}
-                    {{-- <td>{{ $p->tgl_lahir}}</td> --}}
+                    <td>{{ $p->kode_kelas}}</td>
+                    <td>{{ $p->tgl_lahir}}</td>
                     <td>{{ $p->jenkel }}</td>
-                    {{-- <td>{{ $p->nm_ayah}}</td> --}}
-                    {{-- <td>{{ $p->pekerjaan_ayah}}</td> --}}
-                    {{-- <td>{{ $p->no_tlp }}</td> --}}
+                    <td>{{ $p->nm_ayah}}</td>
+                    <td>{{ $p->pekerjaan_ayah}}</td>
+                    <td>{{ $p->no_tlp }}</td>
                     <td>{{ $p->email }}</td>
-                    {{-- <td>{{ $p->alamat }}</td> --}}
+                    <td>{{ $p->alamat }}</td>
                     <td>
                         <a href="/edit-siswa/{{ $p->nis }}" class="btn btn-warning">Edit</a>
                         <a href="/detail-siswa/{{ $p->nis }}" class="btn btn-success">detail</a>
@@ -179,5 +194,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </tbody>
         </table>
     </div>
-</div>
+</div> --}}
 @endsection
