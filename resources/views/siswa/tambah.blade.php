@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="input-group">
                             <label for="kode_kelas">Kode Kelas </label>
                                 <select class="form-control" id="kode_kelas" name="kode_kelas">
-                                <option value="">Pilih Kode</option>
+                                <option value="">Pilih Kode Kelas</option>
                                 @foreach ($kelas as $item)
                                 <option value="{{ $item->kode_kelas}}">{{ $item->kode_kelas }}</option>
                                 @endforeach

@@ -17,6 +17,12 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
+  @if($message = Session::get('error'))
+  <div class="alert alert-danger alert-block">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+      <strong>{{ $message }}</strong>
+  </div>
+@endif
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">

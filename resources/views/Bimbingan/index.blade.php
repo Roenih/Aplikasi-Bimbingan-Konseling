@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{-- Data Bimbingan --}}
                 </div>
                 <div class="card-body">
-                    <a href="/tambah-bimbingan" class="btn btn-success float-right"><i class=" fa fa-plus"></i>Tambah Bimbingan</a>
+                    <a href="/tambah-bimbingan" class="btn btn-success float-right"><i class=" fa fa-plus"></i>Tambah Data Bimbingan</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped" id="table-data">

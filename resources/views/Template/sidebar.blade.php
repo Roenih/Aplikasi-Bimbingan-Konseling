@@ -99,7 +99,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{route('logout')}}" class="nav-link">
+          <a href="{{route('logout')}}" class="nav-link" onclick="return confirm('Anda Yakin Ingin Keluar?')">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Logout

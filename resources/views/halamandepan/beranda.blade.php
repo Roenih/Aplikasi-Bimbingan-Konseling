@@ -102,6 +102,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
           <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-teal">
+              <div class="inner">
+                <h3>{{ $jumlah_jenismasalah }}</h3>
+
+                <p>Jumlah masalah</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="/jenismasalah" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col">
@@ -127,10 +141,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card">
               <div class="card-header">
               </div> --}}
-              <div class="card-body">
+              {{-- <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use session;
 
 class AuthController extends Controller
 {
@@ -18,7 +19,7 @@ class AuthController extends Controller
             return redirect('/beranda');
         }
 
-        return redirect('/login');
+        return redirect('/login')->with('error','Email atau Password anda salah !!');
     }
 
     public function logout()
