@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           @endif
 
                       </div>
-                        <div class="input-group">
+                        <div class="form-group">
                             <label>Nama Kelas </label>
                                 <select name="nm_kelas" class="form-control" name="id_kelas">
                                 <option value="">Pilih Kelas</option>
@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                         
                         <div class="form-group">
-                            <labe>Tanggal Konsultasi</label>
+                            <labe><b>Tanggal Konsultasi</b></label>
                             <input type="date" autocomplete="off" name="tgl_konsultasi" class="form-control">
                             
                              @if($errors->has('tgl_konsultasi'))
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @endif
                         </div> --}}
                         
-                        <div class="input-group">
+                        <div class="form-group">
                             <label>Id Masalah</label>
                                 <select class="form-control" name="id_masalah">
                                 <option value="">Pilih Masalah</option>

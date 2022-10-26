@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         {{ method_field('PUT') }}
  
                         <div class="form-group">
-                            <labe>NIS</label>
+                            <labe><b>NIS</b></label>
                             <input type="text" name="nis" value="{{$siswa->nis}}" class="form-control">
  
                             @if($errors->has('nis'))
@@ -101,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
 
                         <div class="form-group">
-                            <labe>Tanggal Lahir</label>
+                            <labe><b>Tanggal Lahir</b></label>
                             <input type="date" autocomplete="off" value="{{$siswa->tgl_lahir}}" name="tgl_lahir" class="form-control">
                             
                              @if($errors->has('tgl_lahir'))
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Jenis Kelamin</label>
+                            <labe><b>Jenis Kelamin</b></label>
                                 <input type="radio" name="jenkel" value="Laki-laki" id="Laki-laki" checked> &nbsp; Laki-laki
                                 <input type="radio" name="jenkel" value="Perempuan" id="Perempuan"> &nbsp; Perempuan
                             @if ($errors->has('jenkel'))
@@ -123,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Nama Ayah</label>
+                            <labe><b>Nama Ayah</b></label>
                             <input type="text" autocomplete="off" name="nm_ayah" value="{{$siswa->nm_ayah}}" class="form-control">
                             
                              @if($errors->has('nm_ayah'))
@@ -134,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Pekerjaan Ayah</label>
+                            <labe><b>Pekerjaan Ayah</b></label>
                             <input type="text" autocomplete="off" name="pekerjaan_ayah" value="{{$siswa->pekerjaan_ayah}}" class="form-control">
                             
                              @if($errors->has('pekerjaan_ayah'))
@@ -145,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>No Telepon</label>
+                            <labe><b>No Telepon</b></label>
                             <input type="text" autocomplete="off" name="no_tlp" value="{{$siswa->no_tlp}}" class="form-control">
                             
                              @if($errors->has('no_tlp'))
@@ -156,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Alamat</label>
+                            <labe><b>Alamat</b></label>
                             <textarea autocomplete="off" name="alamat" value="{{$siswa->alamat}}" class="form-control"></textarea>
 
                              @if($errors->has('alamat'))
@@ -167,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Email</label>
+                            <labe><b>Email</b></label>
                             <input type="text" autocomplete="off" name="email" value="{{$siswa->email}}" class="form-control">
 
                              @if($errors->has('email'))

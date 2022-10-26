@@ -83,6 +83,7 @@ Route::get('/beranda','BerandaController@index')->middleware('auth');
 
 Route::get('/profile','DashboardController@Profile');
 
+
 // Route Guru
 // Route::get('/guru', 'GuruController@index')->name('guru');
 // Route::get('/tambah-guru', 'GuruController@tambah');

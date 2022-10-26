@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
  
                         </div>
  
-                          <div class="input-group">
+                          <div class="form-group">
                             <label>Nama Kelas </label>
                                 <select name="nm_kelas" class="form-control">
                                 <option value="{{$bimbingan->nm_kelas}}">Pilih Kelas</option>
@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </select>
                           </div>
                         <div class="form-group">
-                            <labe>Tanggal Konsultasi</label>
+                            <labe><b>Tanggal Konsultasi</b></label>
                             <input type="date" autocomplete="off" name="tgl_konsultasi" value="{{$bimbingan->tgl_konsultasi}}" class="form-control">
                             
                              @if($errors->has('tgl_konsultasi'))
@@ -99,9 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @endif
                         </div>
 
-                        <div class="input-group">
+                        <div class="form-group">
                             <label>Id Masalah</label>
-                                <select class="id_masalah" class="form-control" name="id_masalah">
+                                <select class="form-control" name="id_masalah">
                                 <option value="">Pilih Masalah</option>
                                 @foreach ($jenismasalah as $item)
                                 <option value="{{ $item->id_masalah}}">{{ $item->nm_masalah}}</option>
@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         
                         <div class="form-group">
                             <label>Diskripsi Bimbingan</label>
-                            <textarea name="diskripsi_bimbingan" value="{{$bimbingan->penyelesaian}}" class="form-control"></textarea>
+                            <textarea name="diskripsi_bimbingan" value="{{$bimbingan->diskripsi_bimbingan}}" class="form-control"></textarea>
 
                             {{-- <input type="text" autocomplete="off" name="diskripsi_bimbingan" value="{{$bimbingan->diskripsi_bimbingan}}" class="form-control"> --}}
  

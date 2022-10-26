@@ -7,7 +7,7 @@
     <style type="text/css">
 		table tr td,
 		table tr th{
-			font-size: 9pt;
+			font-size: 7pt;
 		}
 	</style>
     <div class="container">

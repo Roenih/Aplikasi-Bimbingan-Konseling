@@ -81,8 +81,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <th>Nama Kelas</th>
                                 <th>Tanggal Konsultasi</th>
                                 {{-- <th>Id Kelas</th> --}}
-                                <th> Nama Masalah</th>
-                                <th>Diskripsi Bimbingan</th>
+                                <th> Jenis Masalah</th>
+                                <th>Diskripsi Permasalahan</th>
                                 <th>Penyelesaian</th>
                                 <th style="text-align: center;">Aksi</th>
                             </tr>

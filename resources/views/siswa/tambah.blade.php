@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         {{ csrf_field() }}
  
                         <div class="form-group">
-                            <labe>Nis</label>
+                            <labe><b>Nis</b></label>
                             <input type="text" autocomplete="off" name="nis" class="form-control">
  
                             @if($errors->has('nis'))
@@ -87,7 +87,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
  
                         </div>
                         
-                        <div class="input-group">
+                        
+                        <div class="form-group">
                             <label for="kode_kelas">Kode Kelas </label>
                                 <select class="form-control" id="kode_kelas" name="kode_kelas">
                                 <option value="">Pilih Kode Kelas</option>
@@ -99,9 +100,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <button class="btn btn-outline-secondary" class="form-control" type="button">Button</button></a>
                             </div> --}}
                           </div>
+                        
 
                         <div class="form-group">
-                            <labe>Tanggal Lahir</label>
+                            <labe><b>Tanggal Lahir</b></label>
                             <input type="date" autocomplete="off" name="tgl_lahir" class="form-control">
                             
                              @if($errors->has('tgl_lahir'))
@@ -113,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Jenis Kelamin</label>
+                            <labe><b>Jenis Kelamin</b></label>
                                 <input type="radio" name="jenkel" value="Laki-laki" id="Laki-laki" checked> &nbsp; Laki-laki
                                 <input type="radio" name="jenkel" value="Perempuan" id="Perempuan"> &nbsp; Perempuan
                             @if ($errors->has('jenkel'))
@@ -125,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Nama Ayah</label>
+                            <labe><b>Nama Ayah</b></label>
                             <input type="text" autocomplete="off" name="nm_ayah" class="form-control">
                             
                              @if($errors->has('nm_ayah'))
@@ -137,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Pekerjaan Ayah</label>
+                            <labe><b>Pekerjaan Ayah</b></label>
                             <input type="text" autocomplete="off" name="pekerjaan_ayah" class="form-control">
                             
                              @if($errors->has('pekerjaan_ayah'))
@@ -149,7 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>No Telepon</label>
+                            <labe><b>No Telepon</b></label>
                             <input type="text" autocomplete="off" name="no_tlp" class="form-control">
                             
                              @if($errors->has('no_tlp'))
@@ -161,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Alamat</label>
+                            <labe><b>Alamat</b></label>
                             <textarea name="alamat" class="form-control" placeholder="">{{ old('alamat') }}</textarea>
 
                              @if($errors->has('alamat'))
@@ -173,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
                         <div class="form-group">
-                            <labe>Email</label>
+                            <labe><b>Email</b></label>
                             <input type="text" autocomplete="off" name="email" class="form-control">
 
                              @if($errors->has('email'))
