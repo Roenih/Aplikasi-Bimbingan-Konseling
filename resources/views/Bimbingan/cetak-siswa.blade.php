@@ -11,8 +11,11 @@
 		}
 	</style>
     <div class="container">
-        <h1>Laporan Siswa</h1>
-        <table class="table table-bordered">
+        <center>
+            <h4>Laporan Data siswa</h4>
+            <h4>Bimbingan Konseling SMK Informatika Utama</h4>
+        </center>
+        <table border="1" cellspascing="0" cellpadding="8" style="widt: 100;">
             <thead>
                 <tr>
                     <th>No</th>

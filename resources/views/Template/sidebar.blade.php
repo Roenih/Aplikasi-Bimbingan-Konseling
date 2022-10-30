@@ -2,7 +2,7 @@
   <!-- Brand Logo -->
   <a href="#" class="brand-link">
     <img src="{{asset('gambar/logosmki.jpeg')}}" alt="" class="brand-image img-circle">
-    <span class="brand-text font-weight-dark">SMKI UTAMA</span>
+    <span class="brand-text font-weight-dark"><b>SMKI UTAMA</b></span>
   </a>
 
   <!-- Sidebar -->
