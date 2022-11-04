@@ -87,9 +87,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
  
                         </div>
                         
-                        <div class="input-group">
-                            <label>Kode Kelas </label>
-                                <select class="kode_kelas" class="form-control" id="kode_kelas">
+                        <div class="form-group">
+                            <label for="kode_kelas">Kode Kelas</label>
+                                <select class="form-control" id="kode_kelas">
                                 <option value="">Pilih Kode</option>
                                 @foreach ($kelas as $item)
                                 <option value="{{ $item->kode_kelas}}">{{ $item->kode_kelas}}</option>
@@ -157,7 +157,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="form-group">
                             <labe><b>Alamat</b></label>
-                            <textarea autocomplete="off" name="alamat" value="{{$siswa->alamat}}" class="form-control"></textarea>
+                            <textarea autocomplete="off" name="alamat" class="form-control">{{ $siswa->alamat }}</textarea>
 
                              @if($errors->has('alamat'))
                                 <div class="text-danger">

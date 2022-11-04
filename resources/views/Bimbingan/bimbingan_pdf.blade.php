@@ -29,8 +29,7 @@
             @foreach ($bimbingan as $data)
                 <tr>
                     <td>{{$data->nis}}</td>
-                    <td>{{$data->siswa->nm_siswa}}</td>
-                    <td>{{$data->kelas->nm_kelas}}</td>
+                    <td>{{$data->siswa->nm_siswa}}</td>p
                     <td>{{$data->tgl_konsultasi}}</td>
                     <td>{{$data->jenismasalah->nm_masalah}}</td>
                     <td>{{$data->diskripsi_bimbingan}}</td>

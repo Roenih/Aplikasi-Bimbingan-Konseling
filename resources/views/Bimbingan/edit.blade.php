@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         
                         <div class="form-group">
                             <label>Diskripsi Bimbingan</label>
-                            <textarea name="diskripsi_bimbingan" value="{{$bimbingan->diskripsi_bimbingan}}" class="form-control"></textarea>
+                            <textarea name="diskripsi_bimbingan" class="form-control">{{$bimbingan->diskripsi_bimbingan}}</textarea>
 
                             {{-- <input type="text" autocomplete="off" name="diskripsi_bimbingan" value="{{$bimbingan->diskripsi_bimbingan}}" class="form-control"> --}}
  
