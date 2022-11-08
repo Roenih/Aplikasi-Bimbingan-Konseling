@@ -54,6 +54,38 @@ class BimbinganController extends Controller
     	return redirect('/bimbingan')->with('Data ditambah','Data berhasil ditambah!');
     }
 
+    public function tambahUser()
+    {
+        $jenismasalah = \App\JenisMasalah::all();
+    	return view('bimbingan.tambah-user', compact('jenismasalah'));
+    }
+
+    public function storeUser(Request $request)
+    {
+        // $this->validate($request,[
+        //     'nis' => 'required|string|unique:bimbingans,nis',
+        //     'nm_siswa' => 'required',
+        //     // 'nm_kelas' => 'required',
+        //     'tgl_konsultasi' => 'required',
+        //     // 'kode_kelas' => 'required',
+        //     'jenis_masalah' => 'required',
+        //     'diskripsi_bimbingan' => 'required',
+        //     'penyelesaian' => 'required'
+        //     ]);
+
+        $check_siswa = Siswa::where('email', Auth()->user()->email)->first();
+
+        Bimbingan::create([
+            'nis' => $check_siswa->nis,
+            'nm_kelas' => $check_siswa->kode_kelas,
+            'tgl_konsultasi' => $request->tgl_konsultasi,
+            'id_masalah' => $request->id_masalah,
+            'diskripsi_bimbingan' => $request->diskripsi_bimbingan,
+            'penyelesaian' => $request->penyelesaian,
+        ]);
+        return redirect('/tambah-bimbingan-user')->with('Data ditambah','Data berhasil ditambah!');
+    }
+
     public function detail($id)
     {
         $bimbingan = Bimbingan::where('id_bimbingan',$id)->first();

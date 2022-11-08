@@ -34,13 +34,14 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-             <li class="nav-item">
+            <li class="nav-item">
               <a href="/beranda" class="nav-link {{ Request::is('beranda') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-home" ></i>
                 <p>Menu utama</p>
               </a>
             </li>
         
+        @if (Auth()->user()->role ==='admin')
         <li class="nav-item  menu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -98,6 +99,22 @@
             </p>
           </a>
         </li>
+        @else
+          {{-- <li class="nav-item">
+            <a href="/beranda" class="nav-link {{ Request::is('beranda') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-home" ></i>
+              <p>Ajukan Bimbingan</p>
+            </a>
+          </li> --}}
+          <li class="nav-item">
+            <a href="/tambah-bimbingan-user" class="nav-link {{ Request::is('tambah-bimbingan-user') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Ajukan Bimbingan
+              </p>
+            </a>
+          </li>
+        @endif
         <li class="nav-item">
           <a href="{{route('logout')}}" class="nav-link" onclick="return confirm('Anda Yakin Ingin Keluar?')">
             <i class="nav-icon fas fa-th"></i>

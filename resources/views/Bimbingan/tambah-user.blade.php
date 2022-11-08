@@ -19,6 +19,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('Template.sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    @if(session('Data ditambah'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{session('Data ditambah')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -60,11 +68,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <br/>
                     <br/>
                     
-                    <form method="post" action="/store-bimbingan">
+                    <form method="post" action="/store-bimbingan-user">
  
                         {{ csrf_field() }}
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                           <label>Nis / Nama </label>
                           <select name="nis" class="form-control" id="check_nis">
                             <option value="">Pilih Nis atau Nama</option>
@@ -80,10 +88,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="form-group">
                             <label>Nama Kelas </label>
-                            {{-- <input type="text" id="nm_kelas" autocomplete="off" value="" name="nm_kelas" class="form-control"> --}}
                             <select name="nm_kelas" class="form-control" id="nm_kelas">
                             </select>
-                        </div>                       
+                        </div>                        --}}
                         <div class="form-group">
                             <labe><b>Tanggal Konsultasi</b></label>
                             <input type="date" autocomplete="off" name="tgl_konsultasi" class="form-control">

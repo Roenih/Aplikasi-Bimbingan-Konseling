@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
 
 // Route siswa
@@ -48,7 +48,9 @@ Route::get('/delete-jenismasalah/{id_masalah}', 'JenisMasalahController@delete')
 // Route Bimbingan
 Route::get('/bimbingan', 'BimbinganController@index')->name('bimbingan')->middleware('auth');
 Route::get('/tambah-bimbingan', 'BimbinganController@tambah');
+Route::get('/tambah-bimbingan-user', 'BimbinganController@tambahUser');
 Route::post('/store-bimbingan', 'BimbinganController@store');
+Route::post('/store-bimbingan-user', 'BimbinganController@storeUser');
 Route::get('/edit-bimbingan/{nis}', 'BimbinganController@edit');
 Route::put('/update-bimbingan/{nis}', 'BimbinganController@update');
 Route::get('/delete-bimbingan/{nis}', 'BimbinganController@delete');

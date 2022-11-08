@@ -21,21 +21,42 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
-    	// $this->validate($request,[
+    	$this->validate($request,[
     	// 	'nis' => 'required',
     	// 	'nm_siswa' => 'required',
         //     'kode_siswa' => 'required',
-        //     'tgl_siswa' => 'required',
+            'tgl_lahir' => 'required',
         //     'jenkel' => 'required',
         //     'nm_ayah' => 'required',
         //     'pekerjaan_ayah' => 'required',
         //     'alamat' => 'required',
         //     'no_tlp' => 'required',
         //     'email' => 'required',
-    	// ]);
- 
-        Siswa::create($request->all());
- 
+    	]);
+
+        $password = str_replace('-','',$request->tgl_lahir);
+
+        Siswa::create([
+            'nis' => $request->nis,
+            'nm_siswa' => $request->nm_siswa,
+            'kode_kelas' => $request->kode_kelas,
+            'tgl_lahir' => $request->tgl_lahir,
+            'jenkel' => $request->jenkel,
+            'nm_ayah' => $request->nm_ayah,
+            'pekerjaan_ayah' => $request->pekerjaan_ayah,
+            'alamat' => $request->alamat,
+            'no_tlp' => $request->no_tlp,
+            'email' => $request->email
+        ]);
+
+        \App\User::create([
+            'name' => $request->nm_siswa,
+            'email' => $request->email,
+            'role' => 'user',
+            'password' => bcrypt($password),
+        ]);
+
+        // Siswa::create($request->all());
     	return redirect('/siswa')->with('Data ditambah','Data berhasil ditambah!');
     }
     
@@ -82,12 +103,23 @@ class SiswaController extends Controller
         'email' => $request->email,
         ]);
 
+        \App\User::where('email',$request->email)->update([
+            'name' => $request->nm_siswa,
+            'email' => $request->email,
+            'role' => 'user',
+            'password' => bcrypt($request->password),
+        ]);
+
         return redirect('/siswa')->with('Data diedit','Data berhasil diedit!');
     }
 
     public function delete($id)
     {
-        Siswa::where('nis',$id)->delete();
+        $siswa = Siswa::where('nis',$id)->first();
+        $user = \App\User::where('email',$siswa->email)->first();
+        
+        Siswa::where('nis',$siswa->nis)->delete();
+        \App\User::where('id',$user->id)->delete();
         return redirect('/siswa')->with('Data dihapus','Data berhasil dihapus!');
     }
 

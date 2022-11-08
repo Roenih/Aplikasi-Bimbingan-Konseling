@@ -38,6 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
+    @if (Auth()->user()->role === 'admin')
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -148,8 +149,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
         </div>
-        <!-- /.row -->
-    <!-- /.content -->
+      </div>
+    </section>
+    @else
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Profilemu</h5>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      @foreach ($profile_data as $key => $data)
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">{{$key}}</label>
+                          <input type="text" readonly class="form-control" id="exampleFormControlInput1" placeholder="{{$data}}">
+                        </div>
+                      @endforeach
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Bimbinganmu</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tggl Konsultasi</th>
+                            <th scope="col">Jenis Masalah</th>
+                            <th scope="col">Deskripsi</th>
+                            <th scope="col">Penyelesaian</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($bimbingan_data as $key => $value)
+                              <tr>
+                                <td>{{$key+1}}</td>
+                                <td>{{$value->tgl_konsultasi}}</td>
+                                <td>{{$value->jenismasalah->nm_masalah}}</td>
+                                <td>{{$value->diskripsi_bimbingan}}</td>
+                                <td>{{$value->penyelesaian}}</td>
+                              </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    @endif
+        <!-- /.row -->    
+        <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
