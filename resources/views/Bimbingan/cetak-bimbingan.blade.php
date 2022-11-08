@@ -58,7 +58,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               </ul>
                               <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <form action="/cetak-per-bimbingan" method="get" class="mt-5">
+                                        <div class="form-group">
+                                            <label for="show_bimbingan">Print Per Bimbingan</label>
+                                                <select class="form-control" id="show_bimbingan" name="id_bimbingan">
+                                                    <option value="">Pilih Bimbingan</option>
+                                                    @foreach ($bimbingan as $item)
+                                                        <option value="{{$item->id_bimbingan}}">{{$item->siswa->nm_siswa}} | {{$item->kelas->nm_kelas}} | {{$item->tgl_konsultasi}} </option>
+                                                    @endforeach
+                                                </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Print <i class="fas fa-print"></i></button>
+                                    </form>
+                                    <hr>
                                     <form action="/cetak-bimbingan-pertanggal" class="mt-5" method="get">
+                                        <p class="text-bold">Print Per Tanggal</p>
                                         <div class="form-group" style="display: flex; gap: 10px; align-items: flex-end;">
                                             <div style="width: 100%">
                                                 <input type="date" name="start" class="form-control" id="startInput"
@@ -134,6 +148,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         const endInput = document.getElementById('endInput');
         const tablesHide = document.getElementById('tablesHide');
         const btnTampil = document.getElementById('btnTampil');
+        const showBimbingan = document.querySelector('#show_bimbingan');
+
+        showBimbingan.addEventListener('change', (e) => {
+            console.log(e.target.value);
+            fetch(`http://127.0.0.1:8000/tampil-bimbingan/${e.target.value}`)
+                .then(response => response.json())
+                .then(res => console.log(res))
+        });
 
         tablesHide.style.display = 'none';
 

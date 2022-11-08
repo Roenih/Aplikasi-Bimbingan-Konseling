@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="form-group">
                           <label>Nis / Nama </label>
-                          <select name="nis" class="form-control">
+                          <select name="nis" class="form-control" id="check_nis">
                             <option value="">Pilih Nis atau Nama</option>
                             @foreach ($siswa as $s)
                                 <option value="{{$s->nis}}">{{ $s->nis }} {{ $s->nm_siswa }}</option>
@@ -81,12 +81,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                         <div class="form-group">
                             <label>Nama Kelas </label>
-                                <select name="nm_kelas" class="form-control" name="id_kelas">
-                                <option value="">Pilih Kelas</option>
-                                @foreach ($kelas as $item)
-                                <option value="{{ $item->kode_kelas}}">{{ $item->nm_kelas}}</option>
-                                @endforeach
-                                </select>
+                            {{-- <input type="text" id="nm_kelas" autocomplete="off" value="" name="nm_kelas" class="form-control"> --}}
+                            <select name="nm_kelas" class="form-control" id="nm_kelas">
+                            </select>
                           </div>
                         
                         <div class="form-group">
@@ -112,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div> --}}
                         
                         <div class="form-group">
-                            <label>Id Masalah</label>
+                            <label>Jenis Masalah</label>
                                 <select class="form-control" name="id_masalah">
                                 <option value="">Pilih Masalah</option>
                                 @foreach ($jenismasalah as $item)
@@ -184,5 +181,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
     @include('Template.script')
+    <script>
+      const checkNis = document.querySelector('#check_nis');
+
+      checkNis.addEventListener('change', (e) => {
+        fetch(`http://127.0.0.1:8000/check-kelas/${e.target.value}`)
+          .then(response => response.json())
+          .then(res => {
+              let selectKelas = document.querySelector('#nm_kelas');
+              let option = document.createElement('option');
+              option.text = res.nm_kelas;
+              option.value = res.kode_kelas;
+              selectKelas.add(option);
+          })
+      })
+    </script>
 </body>
 </html>

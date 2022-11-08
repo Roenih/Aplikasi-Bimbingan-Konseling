@@ -37,7 +37,7 @@
              <li class="nav-item">
               <a href="/beranda" class="nav-link {{ Request::is('beranda') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-home" ></i>
-                <p>Home</p>
+                <p>Menu utama</p>
               </a>
             </li>
         
@@ -45,7 +45,7 @@
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Tables
+              Tabel
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -102,7 +102,7 @@
           <a href="{{route('logout')}}" class="nav-link" onclick="return confirm('Anda Yakin Ingin Keluar?')">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Logout
+              keluar
               <span class="right badge badge-danger"></span>
             </p>
           </a>

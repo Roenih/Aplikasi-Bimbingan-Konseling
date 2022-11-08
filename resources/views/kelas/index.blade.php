@@ -20,18 +20,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     @if(session('Data dihapus'))
-    <div class="alert alert-danger" role="alert">
-        {{session('Data dihapus')}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{session('Data dihapus')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     @endif
     @if(session('Data ditambah'))
-    <div class="alert alert-info" role="alert">
-        {{session('Data ditambah')}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{session('Data ditambah')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     @endif
     @if(session('Data diedit'))
-    <div class="alert alert-warning" role="alert">
-        {{session('Data diedit')}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{session('Data diedit')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     @endif
     <!-- Content Header (Page header) -->
@@ -74,7 +83,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <table class="table table-bordered table-hover table-striped" id="table-data">
                         <thead>
                             <tr>
-                                <th>No</th>
                                 <th>Kode Kelas</th>
                                 <th>Nama Kelas </th>
                                 <th colspan="3" style="text-align: center;">Aksi</th>
@@ -83,7 +91,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <tbody>
                             @foreach ($kelas as $i => $p)
                             <tr>
-                                <td>{{ $i+1 }}</td>
                                 <td>{{ $p->kode_kelas }}</td>
                                 <td>{{ $p->nm_kelas }}</td>
                                 <td>

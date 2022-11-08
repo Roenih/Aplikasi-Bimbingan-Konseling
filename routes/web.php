@@ -58,6 +58,8 @@ Route::get('/cetak-bimbingan/pdf','BimbinganController@CetakPdfBimbingan');
 Route::get('/cetak-bimbingan-pertanggal','BimbinganController@CetakPDFTanggal');
 Route::get('/cetak-siswa','BimbinganController@CetakSiswaAll');
 Route::get('/cetak-siswa/per-siswa','BimbinganController@CetakPerSiswa');
+Route::get('/check-kelas/{kelas}','BimbinganController@checkKelas');
+Route::get('/cetak-per-bimbingan','BimbinganController@CetakPerBimbingan');
 
 
 // Route kelas

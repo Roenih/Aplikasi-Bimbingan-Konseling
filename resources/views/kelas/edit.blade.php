@@ -64,18 +64,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         {{ method_field('PUT') }}
  
                         <div class="form-group">
-                            <label>Kode Kelas</label>
-                            <input type="text" autocomplete="off" value="{{$kelas->kode_kelas}}" name="kode_kelas" class="form-control">
- 
-                            @if($errors->has('kode_kelas'))
-                                <div class="text-danger">
-                                    {{ $errors->first('kode_kelas')}}
-                                </div>
-                            @endif
- 
-                        </div>
- 
-                        <div class="form-group">
                             <label>Nama Kelas</label>
                             <input type="text" autocomplete="off" value="{{$kelas->nm_kelas}}" name="nm_kelas" class="form-control">
  

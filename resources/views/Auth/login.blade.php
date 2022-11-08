@@ -29,7 +29,7 @@
       <a href="#" class="h1"><b>Bimbingan Konseling</b></a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to Bimbingan Konseling</p>
+      <p class="login-box-msg">Daftar Bimbingan Konseling</p>
 
       <form action="/postlogin" method="post">
         {{ @csrf_field() }}
@@ -54,7 +54,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
           </div>
           <!-- /.col -->
         </div>

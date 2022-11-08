@@ -25,4 +25,7 @@
     if ($('#table-data')) {
         $('#table-data').DataTable()
     }
+    setTimeout(function() { 
+        $('.alert').alert('close')
+    }, 3000);
 </script>

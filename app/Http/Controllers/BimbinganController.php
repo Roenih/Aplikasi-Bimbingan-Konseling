@@ -60,6 +60,14 @@ class BimbinganController extends Controller
         return view('bimbingan.detail',compact('bimbingan'));
     }
 
+    public function checkKelas($kelas){
+        $check = \App\Siswa::where('nis',$kelas)->first();
+
+        $kelas = \App\Kelas::where('kode_kelas',$check->kode_kelas)->first();
+
+        return response()->json($kelas);
+    }
+
     public function edit($nis)
     {
         $jenismasalah = \App\JenisMasalah::all();
@@ -105,8 +113,20 @@ class BimbinganController extends Controller
     public function CetakBimbingan()
     {
         $siswa = Siswa::all();
-        // dd($siswa);
-        return view('Bimbingan.cetak-bimbingan',compact('siswa'));
+        $bimbingan = Bimbingan::all();
+        // dd($bimbingan);
+        return view('Bimbingan.cetak-bimbingan',compact('siswa','bimbingan'));
+    }
+
+    public function CetakPerBimbingan(Request $request)
+    {
+        $test = $request->id_bimbingan;
+        // dd($test);
+        $bimbingan = Bimbingan::where('id_bimbingan',$test)->get();
+        // dd($bimbingan);
+
+        $pdf = PDF::loadview('Bimbingan.bimbingan_pdf',compact('bimbingan'));
+    	return $pdf->stream();
     }
 
     public function CetakSiswaAll() {
@@ -148,4 +168,5 @@ class BimbinganController extends Controller
     	$pdf = PDF::loadview('Bimbingan.bimbingan_pdf',compact('bimbingan'));
     	return $pdf->stream();
     }
+
 }

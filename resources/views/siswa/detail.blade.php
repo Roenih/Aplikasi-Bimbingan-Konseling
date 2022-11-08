@@ -59,28 +59,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         {{ csrf_field() }}
                             <div class="mb-3 row">
-                                <label for="nis" class="col-sm-2 col-form-label">nis</label>
+                                <label for="nis" class="col-sm-2 col-form-label">NIS</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="nis" value="{{ $siswa->nis }}" disabled>
                                     {{-- <p>{{ $siswa->nis }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="nm_siswa" class="col-sm-2 col-form-label">nm_siswa</label>
+                                <label for="nm_siswa" class="col-sm-2 col-form-label">Nama</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="nm_siswa" value="{{ $siswa->nm_siswa }}" disabled>
                                     {{-- <p>{{ $siswa->nm_siswa }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="kode_kelas" class="col-sm-2 col-form-label">kode_kelas</label>
+                                <label for="kode_kelas" class="col-sm-2 col-form-label">Kelas</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="kode_kelas" value="{{ !empty($siswa->kode_kelas) ? $siswa->kelas->kode_kelas : '-' }}" disabled>
                                     {{-- <p>{{ $siswa->kelas->nm_kelas }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="tgl_lahir" class="col-sm-2 col-form-label">tgl_lahir</label>
+                                <label for="tgl_lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="tgl_lahir" value="{{ $siswa->tgl_lahir }}" disabled>
                                     {{-- <p>{{ $siswa->tgl_lahir }}</p> --}}
@@ -88,42 +88,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
 
                             <div class="mb-3 row">
-                                <label for="jenkel" class="col-sm-2 col-form-label">jenkel</label>
+                                <label for="jenkel" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="jenkel" value="{{ $siswa->jenkel }}" disabled>
                                     {{-- <p>{{ $siswa->jenkel }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="nm_ayah" class="col-sm-2 col-form-label">nm_ayah</label>
+                                <label for="nm_ayah" class="col-sm-2 col-form-label">Nama Ayah</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="nm_ayah" value="{{ $siswa->nm_ayah }}" disabled>
                                     {{-- <p>{{ $siswa->nm_ayah }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="pekerjaan_ayah" class="col-sm-2 col-form-control">pekerjaan_ayah</label>
+                                <label for="pekerjaan_ayah" class="col-sm-2 col-form-control">Pekerjaan Ayah</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="pekerjaan_ayah" value="{{ $siswa->pekerjaan_ayah }}" disabled>
                                     {{-- <p>{{ $siswa->pekerjaan_ayah }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="no_tlp" class="col-sm-2 col-form-label">no_tlp</label>
+                                <label for="no_tlp" class="col-sm-2 col-form-label">No Telepon</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="no_tlp" value="{{ $siswa->no_tlp }}" disabled>
                                     {{-- <p>{{ $siswa->no_tlp }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="alamat" class="col-sm-2 col-form-label">alamat</label>
+                                <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="alamat" value="{{ $siswa->alamat }}" disabled>
                                     {{-- <p>{{ $siswa->alamat }}</p> --}}
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="email" class="col-sm-2 col-form-label">email</label>
+                                <label for="email" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="email" value="{{ $siswa->email }}" disabled>
                                     {{-- <p>{{ $siswa->email }}</p> --}}

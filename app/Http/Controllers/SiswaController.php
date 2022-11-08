@@ -10,7 +10,7 @@ class SiswaController extends Controller
 {
     public function index()
     {
-    	$siswa = Siswa::all();
+    	$siswa = Siswa::select('*')->orderBy('created_at','DESC')->get();
     	return view('siswa.index',compact('siswa'));
     }
     public function tambah()
@@ -68,7 +68,6 @@ class SiswaController extends Controller
         // 'email' => 'required',
 
         // ]);
-
     
         Siswa::where('nis',$id)->update([
         'nis' => $request->nis,

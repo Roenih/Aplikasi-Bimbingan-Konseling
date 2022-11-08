@@ -22,15 +22,16 @@ class KelasController extends Controller
     {
 
         $this->validate($request,[
-            'kode_kelas' => 'required',
             'nm_kelas' => 'required'
-    
             ]);
-            
-        Kelas::create([
-    		'kode_kelas' => $request->kode_kelas,
-    		'nm_kelas' => $request->nm_kelas,
+        
+        $check = $request->nm_kelas;
 
+        $code = 'KLS'.str_replace("-", "", $check);
+
+        Kelas::create([
+    		'kode_kelas' => $code,
+    		'nm_kelas' => $request->nm_kelas,
     	]);
  
     	return redirect('/kelas')->with('Data ditambah','Data berhasil ditambah!');
@@ -51,14 +52,15 @@ class KelasController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request,[
-        'kode_kelas' => 'required',
         'nm_kelas' => 'required'
-
         ]);
 
+        $check = $request->nm_kelas;
+
+        $code = 'KLS'.str_replace("-", "", $check);
     
         Kelas::where('kode_kelas',$id)->update([
-            'kode_kelas' => $request->kode_kelas,
+            'kode_kelas' => $code,
     		'nm_kelas' => $request->nm_kelas,
 
         ]);

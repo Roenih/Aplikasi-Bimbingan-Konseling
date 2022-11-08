@@ -21,18 +21,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     <div>
       @if(session('Data dihapus'))
-      <div class="alert alert-danger" role="alert">
-          {{session('Data dihapus')}}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{session('Data dihapus')}}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
       @endif
       @if(session('Data ditambah'))
-      <div class="alert alert-info" role="alert">
-          {{session('Data ditambah')}}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{session('Data ditambah')}}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
       @endif
       @if(session('Data diedit'))
-      <div class="alert alert-warning" role="alert">
-          {{session('Data diedit')}}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{session('Data diedit')}}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
       @endif
     <!-- Content Header (Page header) -->

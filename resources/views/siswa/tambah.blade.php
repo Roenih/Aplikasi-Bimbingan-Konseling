@@ -89,11 +89,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         
                         
                         <div class="form-group">
-                            <label for="kode_kelas">Kode Kelas </label>
+                            <label for="kode_kelas">Kelas</label>
                                 <select class="form-control" id="kode_kelas" name="kode_kelas">
-                                <option value="">Pilih Kode Kelas</option>
+                                <option value="">Pilih Kelas</option>
                                 @foreach ($kelas as $item)
-                                <option value="{{ $item->kode_kelas}}">{{ $item->kode_kelas }}</option>
+                                <option value="{{ $item->kode_kelas }}">{{ $item->nm_kelas }}</option>
                                 @endforeach
                                 </select>
                             {{-- <div class="input-group-append">
@@ -152,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="form-group">
                             <labe><b>No Telepon</b></label>
-                            <input type="text" autocomplete="off" name="no_tlp" class="form-control">
+                            <input type="number" autocomplete="off" name="no_tlp" class="form-control">
                             
                              @if($errors->has('no_tlp'))
                                 <div class="text-danger">
@@ -176,7 +176,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="form-group">
                             <labe><b>Email</b></label>
-                            <input type="text" autocomplete="off" name="email" class="form-control">
+                            <input type="email" autocomplete="off" name="email" class="form-control">
 
                              @if($errors->has('email'))
                                 <div class="text-danger">

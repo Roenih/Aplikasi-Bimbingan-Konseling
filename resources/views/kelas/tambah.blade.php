@@ -62,20 +62,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         {{ csrf_field() }}
  
                         <div class="form-group">
-                            <label>Kode Kelas</label>
-                            <input type="text" autocomplete="off" name="kode_kelas" class="form-control">
- 
-                            @if($errors->has('kode_kelas'))
-                                <div class="text-danger">
-                                    {{ $errors->first('kode_kelas')}}
-                                </div>
-                            @endif
- 
-                        </div>
- 
-                        <div class="form-group">
                             <label>Nama Kelas</label>
-                            <input type="text" autocomplete="off" name="nm_kelas" class="form-control">
+                            <input type="text" autocomplete="off" name="nm_kelas" placeholder="Example: XII-A" class="form-control">
  
                             @if($errors->has('nm_kelas'))
                                 <div class="text-danger">

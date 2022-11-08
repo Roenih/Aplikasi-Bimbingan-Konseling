@@ -4,7 +4,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"> </i></a>
       </li>
-      <a href="/beranda" class="nav-link">Home</a>
+      <a href="/beranda" class="nav-link">Menu utama</a>
     </ul>
 
     <!-- Right navbar links -->
@@ -101,8 +101,8 @@
             Profile
           </a> --}}
           <div class="dropdown-divider"></div>
-          <a href="/logout" class="dropdown-item">
-            Logout
+          <a href="/logout" class="dropdown-item" onclick="return confirm('Anda Yakin Ingin Keluar?')">
+            Keluar
           </a>
         
         </div>
