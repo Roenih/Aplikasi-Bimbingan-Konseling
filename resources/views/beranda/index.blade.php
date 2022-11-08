@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                           </li>
                           <li class="nav-item">
-                            <a href="{{route('Login')}}" class="nav-link">
+                            <a href="{{route('login')}}" class="nav-link">
                               <i class="nav-icon fas fa-th"></i>
                               <p>
                                 Logout

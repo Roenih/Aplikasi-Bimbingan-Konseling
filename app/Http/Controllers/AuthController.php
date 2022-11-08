@@ -24,7 +24,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::logout();
+        $Auth = Auth::logout();
+
+        // dd($Auth);
         return redirect('/login');
     }
 }
